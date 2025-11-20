@@ -1,16 +1,10 @@
-from voice.recorder import record_audio
-from voice.transcriber import transcribe_audio
-from voice.saver import save_transcription
+import sys
+from PySide6.QtWidgets import QApplication
 
-def main():
-    audio_file = "recorded_audio.wav"
-    text_file = "transcription.txt"
-
-    record_audio(audio_file)
-    transcription = transcribe_audio(audio_file)
-    print("文字起こし結果:")
-    print(transcription)
-    save_transcription(transcription, text_file)
+from src.interface import VoiceController
 
 if __name__ == "__main__":
-    main()
+    app = QApplication(sys.argv)
+    controller = VoiceController()
+    controller.run()
+    sys.exit(app.exec())
