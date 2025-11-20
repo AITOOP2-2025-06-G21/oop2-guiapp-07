@@ -1,6 +1,6 @@
-from recorder import record_audio
-from transcriber import transcribe_audio
-from saver import save_transcription
+from voice.recorder import record_audio
+from voice.transcriber import transcribe_audio
+from voice.saver import save_transcription
 
 def main():
     audio_file = "recorded_audio.wav"
